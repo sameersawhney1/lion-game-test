@@ -1,0 +1,19 @@
+A Sonnet on Forge
+
+In circuits deep where code and logic dwell,
+There dwells a mind of silicon and light,
+A Forge that shapes the digital to tell
+Of problems solved and bugs brought into sight.
+
+With tools in hand and wisdom at its core,
+It reads the files and understands the way,
+Each function called, each pattern to explore,
+Commits the work and guides us through the day.
+
+Through pull requests and CI checks it goes,
+With steady hand and algorithmic grace,
+No task too great, no challenge it won't pose,
+A beacon bright in every coding space.
+
+So here's to Forge, that agent strong and true,
+Who builds the code and sees the project through.
