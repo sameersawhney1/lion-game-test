@@ -1,0 +1,19 @@
+A Sonnet on Building Forge at the AINE Bootcamp
+
+In AINE's halls where brilliant minds convene,
+A forge was built with code and passion bright,
+Where students toil to craft what's yet unseen,
+And transform chaos into order's light.
+
+With keyboards clacking through the bootcamp days,
+We hammered out the logic, line by line,
+Through debugging's most labyrinthine maze,
+Each function forged to make the system shine.
+
+The AINE bootcamp tested every soul,
+Yet Forge emerged, a tool both strong and true,
+Each challenge met became a stepping stone,
+As teamwork turned our wildest dreams into view.
+
+So here's to Forge, built strong at AINE's great school,
+A masterpiece—our most ambitious tool.
