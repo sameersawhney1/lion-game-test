@@ -1,0 +1,19 @@
+A Sonnet on the Struggles of Building Forge
+
+When code and logic dance in tangled webs,
+And bugs emerge from shadows unforeseen,
+The builder's will and confidence both ebbs,
+As errors mock what once was clean and keen.
+
+The integration tests that fail at night,
+The merge conflicts that twist the developer's mind,
+The endless loops of debugging the plight,
+Where solutions hide and are so hard to find.
+
+Yet still we forge ahead through every trial,
+Each failure teaches lessons yet untold,
+We build with grit, with patience, and with style,
+Creating tools more precious far than gold.
+
+For in the struggle lies the builder's art—
+Each line of code, a piece of the heart.
