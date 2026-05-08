@@ -1,0 +1,19 @@
+A Sonnet on the Struggles of Building Forge
+
+When code and logic dance in tangled webs,
+And bugs emerge from corners unforeseen,
+Each function call a tide that ebbs and flows,
+While integration tests demand their scene.
+
+The architecture shifts beneath our feet,
+As requirements evolve with every dawn,
+We forge ahead through challenges we meet,
+Yet hope remains when all our strength is gone.
+
+Through debugging and refactoring we toil,
+Each pull request a battle hard-fought won,
+The CI pipelines test our patience, roil,
+Yet satisfaction comes when work is done.
+
+So here's to Forge—a tool built strong and true,
+Where struggle births the things we dream to do.
