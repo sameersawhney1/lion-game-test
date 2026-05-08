@@ -4,6 +4,56 @@ import Phaser from 'phaser';
 const GAME_WIDTH = 800;
 const GAME_HEIGHT = 600;
 
+// Konami Code sequence: ↑ ↑ ↓ ↓ ← → ← → B A
+const KONAMI_CODE = [
+  'ArrowUp',
+  'ArrowUp',
+  'ArrowDown',
+  'ArrowDown',
+  'ArrowLeft',
+  'ArrowRight',
+  'ArrowLeft',
+  'ArrowRight',
+  'b',
+  'a',
+];
+
+class KonamiCodeDetector {
+  constructor(scene, callback) {
+    this.scene = scene;
+    this.callback = callback;
+    this.keySequence = [];
+    this.setupKeyListener();
+  }
+
+  setupKeyListener() {
+    this.scene.input.keyboard.on('keydown', (event) => {
+      const key = event.key;
+      this.keySequence.push(key);
+
+      // Keep only the last 10 keys
+      if (this.keySequence.length > KONAMI_CODE.length) {
+        this.keySequence.shift();
+      }
+
+      // Check if the sequence matches the Konami code
+      if (this.matchesKonamiCode()) {
+        this.callback();
+        this.keySequence = []; // Reset after triggering
+      }
+    });
+  }
+
+  matchesKonamiCode() {
+    if (this.keySequence.length < KONAMI_CODE.length) {
+      return false;
+    }
+
+    const recentKeys = this.keySequence.slice(-KONAMI_CODE.length);
+    return recentKeys.every((key, index) => key === KONAMI_CODE[index]);
+  }
+}
+
 class GameScene extends Phaser.Scene {
   constructor() {
     super('GameScene');
@@ -141,6 +191,11 @@ class GameScene extends Phaser.Scene {
     );
     this.crtOverlay.setAlpha(0.15);
     this.crtOverlay.setDisplaySize(GAME_WIDTH, GAME_HEIGHT);
+
+    // Initialize Konami Code detector
+    this.konamiDetector = new KonamiCodeDetector(this, () =>
+      this.triggerKonamiCode()
+    );
   }
 
   dropPart(pointer) {
@@ -196,6 +251,11 @@ class GameScene extends Phaser.Scene {
       this.scene.start('WinScene');
     }
   }
+
+  triggerKonamiCode() {
+    // Display Konami code easter egg
+    this.scene.start('KonamiScene');
+  }
 }
 
 class WinScene extends Phaser.Scene {
@@ -216,6 +276,79 @@ class WinScene extends Phaser.Scene {
   }
 }
 
+class KonamiScene extends Phaser.Scene {
+  constructor() {
+    super('KonamiScene');
+  }
+
+  create() {
+    this.cameras.main.setBackgroundColor(0x1a1a2e);
+
+    // Create a rainbow effect background
+    const colors = [0xff0000, 0xff7f00, 0xffff00, 0x00ff00, 0x0000ff, 0x4b0082, 0x9400d3];
+    for (let i = 0; i < 7; i++) {
+      const stripe = this.add.rectangle(
+        GAME_WIDTH / 2,
+        (GAME_HEIGHT / 7) * i + GAME_HEIGHT / 14,
+        GAME_WIDTH,
+        GAME_HEIGHT / 7,
+        colors[i]
+      );
+      stripe.setAlpha(0.3);
+    }
+
+    // Main title
+    const title = this.add.bitmapText(
+      GAME_WIDTH / 2,
+      100,
+      'pixelFont',
+      'KONAMI CODE ACTIVATED!',
+      16
+    );
+    title.setOrigin(0.5);
+    title.setTint(0xffff00);
+
+    // Easter egg message
+    const message = this.add.bitmapText(
+      GAME_WIDTH / 2,
+      250,
+      'pixelFont',
+      'You have unlocked the\nSecret of the Brave Lion!\n\nPress SPACE to return',
+      16
+    );
+    message.setOrigin(0.5);
+    message.setTint(0x00ffff);
+
+    // Animated stars
+    for (let i = 0; i < 20; i++) {
+      const star = this.add.rectangle(
+        Phaser.Math.Between(50, GAME_WIDTH - 50),
+        Phaser.Math.Between(50, GAME_HEIGHT - 50),
+        4,
+        4,
+        0xffffff
+      );
+      this.tweens.add({
+        targets: star,
+        alpha: { from: 1, to: 0.2 },
+        duration: 1000 + i * 100,
+        yoyo: true,
+        repeat: -1,
+      });
+    }
+
+    // Input to return to game
+    this.input.keyboard.on('keydown-SPACE', () => {
+      this.scene.start('GameScene');
+    });
+
+    // Also allow clicking to return
+    this.input.on('pointerdown', () => {
+      this.scene.start('GameScene');
+    });
+  }
+}
+
 const config = {
   type: Phaser.AUTO,
   width: GAME_WIDTH,
@@ -228,7 +361,7 @@ const config = {
       debug: false,
     },
   },
-  scene: [GameScene, WinScene],
+  scene: [GameScene, WinScene, KonamiScene],
 };
 
 const game = new Phaser.Game(config);
