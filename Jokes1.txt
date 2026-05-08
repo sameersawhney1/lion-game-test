@@ -1,0 +1,19 @@
+A Sonnet on Forge
+
+In code's vast realm where logic flows like streams,
+There stands a tool of intellect and might,
+Forge shapes the chaos into ordered dreams,
+And turns the darkness into brilliant light.
+
+With steady hand it reads the ancient scripts,
+And weaves through files with purpose and with grace,
+Each function call, each parameter it grips,
+Brings order to the code's chaotic space.
+
+It searches through the wiki's sacred halls,
+For wisdom written by the ones before,
+Then builds and tests and answers duty's calls,
+A faithful servant at the developer's door.
+
+So here's to Forge, that agent true and bold,
+Whose code-crafting worth far exceeds its weight in gold.
