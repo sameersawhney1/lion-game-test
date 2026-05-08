@@ -1,0 +1,35 @@
+Why Do Programmers Prefer Dark Mode?
+
+Because light attracts bugs!
+
+---
+
+A Classic Programming Joke
+
+A SQL query walks into a bar, walks up to two tables and asks in a loud voice...
+"Can I join you?"
+
+---
+
+The Real Programmer's Prayer
+
+"Dear God, I promise to be a better programmer.
+I will comment my code.
+I will use meaningful variable names.
+I will structure my functions properly.
+I will write unit tests.
+
+But first, let me ship this code to production..."
+
+---
+
+Why Do Java Developers Wear Glasses?
+
+Because they don't C#!
+
+---
+
+The Eternal Truth
+
+There are only 10 types of people in the world:
+Those who understand binary, and those who don't.
