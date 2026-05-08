@@ -1,0 +1,19 @@
+A Sonnet on the Struggles of Building Forge in AINE Bootcamp
+
+In AINE's halls where ambitions burn bright,
+We crafted Forge to parse and understand,
+Through sleepless nights and code reviews so tight,
+We built an agent with a steady hand.
+
+The deadlines pressed like weight upon our souls,
+While features multiplied beyond our scope,
+Each sprint brought new and challenging goals,
+Yet still we climbed, sustained by stubborn hope.
+
+The wiki pages grew, the tests did fail,
+The git commits stacked high in endless streams,
+Through every bug and every setback's tale,
+We chased the vision of our boldest dreams.
+
+In bootcamp's crucible, our Forge was born—
+From struggle's night, we've forged a brilliant morn.
