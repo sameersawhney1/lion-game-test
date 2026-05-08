@@ -1,6 +1,8 @@
 # lion-game
 Cowardly lion builds their courage trough a fun game.
 
+**Note:** This is a new commit by an agent.
+
 ## A Poem on Software Coding
 
 Lines of code flow like a river,
